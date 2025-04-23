@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetalStation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--menu-->
+    <header>
+        <div class="header-container">
+            <div class="logo">Logo</div>
+            <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</div>
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <div class="submenu-wrapper">
+                <a href="#" class="submenu-toggle" onclick="toggleSubmenu(event)">Guitarras</a>
+                <div class="submenu-horizontal" id="submenu-guitarras">
+                    <div class="submenu-item">
+                        <img src="../img/1.png" alt="Guitarra 1">
+                        <div class="submenu-text">
+                            <h4>Guitarra Clásica</h4>
+                            <p>Sonido suave, ideal para comenzar.</p>
+                            <a href="#contacto" class="btn-dorado">Comprar</a>
+                        </div>
+                    </div>
+                    <div class="submenu-item">
+                        <img src="../img/1.png" alt="Guitarra 2">
+                        <div class="submenu-text">
+                            <h4>Guitarra Eléctrica</h4>
+                            <p>Potente y perfecta para rockear.</p>
+                            <a href="#contacto" class="btn-dorado">Comprar</a>
+                        </div>
+                    </div>
+                    <div class="submenu-item">
+                        <img src="../img/1.png" alt="Guitarra 3">
+                        <div class="submenu-text">
+                            <h4>Guitarra Acústica</h4>
+                            <p>Versátil y gran proyección sonora.</p>
+                            <a href="#contacto" class="btn-dorado">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#accesorios">Accesorios</a>
+            <a href="#amplificadores">Amplificadores</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <script>
+            function toggleSubmenu(event) {
+                event.preventDefault(); // 👉 Esto evita que se navegue a #guitarras
+                const submenu = document.getElementById("submenu-guitarras");
+
+                // Cerrar otros si hay
+                document.querySelectorAll(".submenu-horizontal").forEach(el => {
+                    if (el !== submenu) el.classList.remove("active");
+                });
+
+                // Alternar visibilidad
+                submenu.classList.toggle("active");
+
+                // Cierra si haces clic fuera
+                document.addEventListener("click", function handleOutsideClick(e) {
+                    if (!submenu.contains(e.target) && !event.target.closest('.submenu-wrapper')) {
+                        submenu.classList.remove("active");
+                        document.removeEventListener("click", handleOutsideClick);
+                    }
+                });
+            }
+        </script>
+
+    </header>
+
+    <!--menu-->
+    <section id="home" class="container">
+        <div class="home-banner">
+            <img src="../img/banner.png" alt="">
+            <div class="banner-text">VIVE LA EXPERIENCIA <br> DE UNA ESTRELLA DE ROCK</div>
+        </div>
+        <div class="home-content">
+            <div class="home-text">
+                <p>Solo aqui encontraras lo necesario para poder ser
+                    la proxima estrella de rock o metal ademas de elevar
+                    tu musica al cielo, muchas ofertas y productos de calidad
+                    te estan esperando solo tu tienes la decision.</p>
+                <br>
+                <a href="#guitarras" class="button">COMPRAR AHORA</a>
+            </div>
+            <div class="home-images">
+                <img src="../img/1.png" alt="">
+                <img src="../img/2.png" alt="">
+                <img src="../img/3.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="guitarras" class="container guitarras-section">
+        <div class="guitarras-text">
+            <h2>TIPOS DE GUITARRAS</h2>
+            <p>En el mundo existen una infinidad de guitarras con distintos diseños y modelos...</p>
+            <p><strong>GUITARRA SÓLIDA:</strong> Tienen más sustain y son más resistentes al feedback...</p>
+            <p><strong>GUITARRA SEMISÓLIDA:</strong> Tienen un ligero deje acústico y se asocian con el Blues o Jazz...
+            </p>
+            <p><strong>GUITARRA HUECA:</strong> Cuentan con un cuerpo hueco con una cámara de resonancia...</p>
+            <h4>TODOS ESTOS MODELOS LOS ENCONTRARÁS SOLO AQUÍ!!</h4>
+            <div class="audio-wrapper">
+                <h3>Audio de muestra</h3>
+                <audio src="../audio.mp3" controls loop>AUDIO NO SOPORTADO</audio>
+            </div>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Yw74sDWPH7U?si=WOXdBSESHiT20uQi"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="accesorios" class="accesorios-section-final">
+        <div class="fila-accesorio">
+            <div class="grid-accesorios">
+                <div class="accesorio-bloque">
+                    <div class="accesorio-imagen">
+                        <img src="../img/accesorios.png" alt="Uñas, Campotrastes, Afinadores">
+                    </div>
+                    <div class="accesorio-info">
+                        <h2>UÑAS - CAMPOTRASTES - AFINADORES</h2>
+                        <p>Ofrecemos una amplia gama de uñas para pulgar, campotrastes ergonómicos...</p>
+                        <a href="#" class="gold-button">Ver Accesorios</a>
+                    </div>
+                </div>
+
+                <div class="accesorio-bloque">
+                    <div class="accesorio-imagen">
+                        <img src="../img/accesorios-1.png" alt="Limpieza y mantenimiento">
+                    </div>
+                    <div class="accesorio-info">
+                        <h2>LIMPIEZA Y MANTENIMIENTO</h2>
+                        <p>Mantén tu instrumento impecable con nuestros kits de limpieza...</p>
+                        <a href="#" class="gold-button">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amplificadores" style="padding: 60px 20px; background-color: #f9f9f9;">
+        <div style="text-align: center;">
+            <h2 style="font-size: 2.5em; font-style: italic; margin-bottom: 10px;">AMPLIFICADORES</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: #555;">
+                En este listado encontrarás diversos tipos de amplificadores...
+            </p>
+        </div>
+        <hr style="width: 80px; margin: 0 auto 40px; border: 1px solid #ccc;">
+
+        <div class="amp-grid">
+            <div class="amp-card">
+                <img src="../img/producto.png" alt="Amplificador de transistores">
+                <h3>Amplificador de transistores</h3>
+                <button class="btn-dorado">COMPRAR</button>
+            </div>
+
+            <div class="amp-card">
+                <img src="../img/producto-2.png" alt="Amplificador de modelado">
+                <h3>Amplificador de modelado</h3>
+                <button class="btn-dorado">COMPRAR</button>
+            </div>
+
+            <div class="amp-card">
+                <img src="../img/producto.png" alt="Amplificador Hibrido">
+                <h3>Amplificador Hibrido</h3>
+                <button class="btn-dorado">COMPRAR</button>
+            </div>
+
+            <div class="amp-card">
+                <img src="../img/producto-2.png" alt="Amplificador de válvulas">
+                <h3>Amplificador de válvulas</h3>
+                <button class="btn-dorado">COMPRAR</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion-contacto">
+        <div class="contenedor-contacto">
+            <div class="info-contacto">
+                <h2>Contactanos</h2>
+                <p><em>Brindanos tus datos junto con tus dudas o recomendaciones...</em></p>
+                <p><strong>E-mail:</strong><br>Metalstation@shop.pe</p>
+                <img src="../img/logo-1.png" alt="logo" style="max-width: 100%; height: auto; display: block; margin: auto;">
+            </div>
+            <div class="formulariodecontacto"
+                style="width:100%;max-width:600px;padding: 20px;border-radius: 20px;box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);margin: auto;">
+                <h3 class="formulariotitulo" style="text-align: center;">contactanos ahora mismo</h3>
+                <form class="formulario-contacto">
+                    <label for="nombre">NOMBRE:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">E-MAIL:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="celular">CELULAR:</label>
+                    <input type="text" id="celular" name="celular">
+
+                    <label for="mensaje">MENSAJE:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                    <button type="submit" class="boton-enviar" style="border-radius: 30px;">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor-footer">
+            <div class="columna-footer">
+                <h3>MetalStation</h3>
+                <p>Tu tienda de confianza para guitarras, accesorios y amplificadores...</p>
+            </div>
+
+            <div class="columna-footer">
+                <h4>Secciones</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#guitarras">Guitarras</a></li>
+                    <li><a href="#accesorios">Accesorios</a></li>
+                    <li><a href="#amplificadores">Amplificadores</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="columna-footer">
+                <h4>Contacto</h4>
+                <p>Email: metalstation@shop.pe</p>
+                <p>Tel: +51 999 888 777</p>
+                <p>Lunes a Viernes, 9am - 6pm</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p style="text-align: center; padding: 40px 0px 2px 0px;">&copy; 2025 MetalStation. Todos los derechos
+                reservados.</p>
+        </div>
+    </footer>
+    <!-- Botón flotante de WhatsApp -->
+    <div class="whatsapp-container">
+        <button class="whatsapp-button" onclick="toggleWhatsappPanel()">💬 WhatsApp</button>
+
+        <div id="whatsapp-panel" class="whatsapp-panel">
+            <h3>Consulta Via WhatsApp</h3>
+            <input type="text" id="userName" placeholder="Cual es tu nombre">
+            <a id="whatsappLink" href="#" target="_blank">Enviar mensaje</a>
+        </div>
+    </div>
+    <!--menu-->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (event) {
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    event.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+
+                    // Quita el hash de la URL sin recargar la página
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
+            });
+        });
+    </script>
+    <!--whatsapp-->
+    <script>
+        function toggleWhatsappPanel() {
+            const panel = document.getElementById("whatsapp-panel");
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        }
+
+        document.getElementById("whatsappLink").addEventListener("click", function (e) {
+            const name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Por favor ingresa tu nombre.");
+                e.preventDefault();
+                return;
+            }
+            const phoneNumber = "51978682644"; // ← Cambia por el número real (sin +)
+            const message = encodeURIComponent(`Hola, soy ${name} y quiero más información sobre sus guitarras.`);
+            this.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        });
+    </script>
+
+
+</body>
+
+</html>

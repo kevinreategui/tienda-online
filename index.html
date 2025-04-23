@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CERTUS - 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #111;
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Splash Screen */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #0b2660;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
+
+        #splash img {
+            width: 60%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        #splash h1 {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        #splash h3 {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        #splash p {
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        #splash .grupo {
+            font-size: 1rem;
+        }
+
+        #splash button {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            background-color: gold;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #splash button:hover {
+            background-color: #d4af37;
+        }
+
+        /* Tabla */
+        table {
+            margin-top: 1rem;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        th,
+        td {
+            padding: 10px 15px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 600px) {
+            #splash h1 {
+                font-size: 1.3rem;
+            }
+
+            #splash h3 {
+                font-size: 1rem;
+            }
+
+            #splash p {
+                font-size: 1rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            #splash button {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pantalla de Bienvenida -->
+    <div id="splash">
+        <img src="img/logo.png" alt="Logo del curso">
+        <h1>CERTUS - Curso: Lenguajes para el Desarrollo</h1>
+        <h3>Profesor: Jhon Frank Bravo</h3>
+        <p>Integrantes del grupo</p>
+        <table>
+            <tr>
+                <th class="grupo">1</th>
+                <th class="grupo">Kevin Kliner Reategui Ríos</th>
+            </tr>
+            <tr>
+                <th class="grupo">2</th>
+                <th class="grupo">ESPINOZA PORTAL JOSÉ</th>
+            </tr>
+            <tr>
+                <th class="grupo">3</th>
+                <th class="grupo">Jose Carlos Carretero Gómez</th>
+            </tr>
+        </table>
+        <button onclick="redirigir()">Siguiente</button>
+    </div>
+
+    <script>
+        function redirigir() {
+            window.location.href = "web/home.html";
+        }
+    </script>
+</body>
+
+</html>

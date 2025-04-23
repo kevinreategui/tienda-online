@@ -1,0 +1,638 @@
+/* Reset básico y box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 2px -2px gray;
+    z-index: 1000;
+}
+
+/* Contenedor para centrar el contenido del header */
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+/* Secciones generales */
+section {
+    padding: 80px 20px 40px;
+    min-height: auto;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Botones */
+.button,
+.btn-dorado,
+.gold-button,
+.boton-enviar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button {
+    background: #FFC107;
+    color: black;
+}
+
+.btn-dorado {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+}
+
+.btn-dorado:hover,
+.gold-button:hover,
+.boton-enviar:hover,
+.button:hover {
+    background-color: #bfa133;
+}
+
+.gold-button {
+    background-color: #d4af37;
+    color: black;
+    border-radius: 30px;
+}
+
+/* Home Banner */
+.home-banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.home-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B0000;
+}
+
+/* Home Content */
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.home-text {
+    width: 50%;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.home-images {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-images img {
+    width: 30%;
+}
+
+/* Guitarras */
+.guitarras-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.guitarras-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.video-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+.audio-wrapper {
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: solid 1px #ccc;
+}
+
+.audio-wrapper h3 {
+    margin-bottom: 12px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+}
+
+audio {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Accesorios */
+.accesorios-section-final {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.fila-accesorio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.grid-accesorios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.accesorio-bloque {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.accesorio-bloque:hover {
+    transform: translateY(-5px);
+}
+
+.accesorio-imagen img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.accesorio-info h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #8B0000;
+    margin-bottom: 10px;
+}
+
+.accesorio-info p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Amplificadores */
+.amp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.amp-card {
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.amp-card:hover {
+    transform: scale(1.03);
+}
+
+.amp-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.amp-card h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Contacto */
+.seccion-contacto {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.contenedor-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+}
+
+.info-contacto {
+    flex: 1 1 300px;
+    color: #333;
+}
+
+.info-contacto h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.info-contacto p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.formulario-contacto {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-contacto label {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    background-color: #d6cdc5;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Footer */
+.pie-pagina {
+    background-color: #222;
+    color: #f5f5f5;
+    padding: 40px 20px 20px;
+    font-size: 0.95em;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+.columna-footer {
+    flex: 1 1 250px;
+}
+
+.columna-footer h3,
+.columna-footer h4 {
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.columna-footer ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.columna-footer ul li a:hover {
+    color: #d4af37;
+}
+
+copyright {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    margin-top: 30px;
+    font-size: 0.85em;
+    color: #aaa;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 1.1em;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .banner-text {
+        font-size: 18px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        text-align: center;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .guitarras-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .guitarras-text {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+        margin-top: 10px;
+    }
+
+    section {
+        padding: 100px 20px 40px;
+    }
+}
+
+.submenu-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu-horizontal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    flex-direction: row;
+    gap: 30px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.submenu-horizontal.active {
+    display: flex;
+}
+
+.submenu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+}
+
+.submenu-item img {
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.submenu-text {
+    padding: 0;
+}
+
+.submenu-text h4 {
+    margin: 0 0 5px;
+    color: #8B0000;
+}
+
+.submenu-text p {
+    font-size: 0.9em;
+    margin: 0 0 10px;
+}
+
+.btn-dorado {
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-dorado:hover {
+    background-color: #bfa133;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .submenu-horizontal {
+        flex-direction: column;
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+
+    .submenu-item {
+        width: 100%;
+    }
+}
+/* whatsapp*/
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #20b858;
+}
+
+.whatsapp-panel {
+    display: none;
+    margin-top: 10px;
+    background: #fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.whatsapp-panel h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.whatsapp-panel input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.whatsapp-panel a {
+    display: block;
+    background-color: #25D366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp-panel a:hover {
+    background-color: #20b858;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
